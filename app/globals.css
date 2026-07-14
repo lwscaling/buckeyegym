@@ -26,3 +26,11 @@ footer{background:#080808;color:#fff;padding:70px 7vw 30px}.footer-mark{display:
 .visit{grid-template-columns:1fr 1fr}
 .visit h2,.quote-section blockquote{font-size:clamp(28px,4vw,60px)}
 @media(max-width:900px){.tour-section,.visit{grid-template-columns:1fr}}
+@media(max-width:767px){
+  .hero h1{letter-spacing:-.07em;line-height:.74}
+  .section h2{letter-spacing:-.07em;line-height:.86}
+  .equipment h2{letter-spacing:-.07em;line-height:.8}
+  .visit h2,.tour-section h2{letter-spacing:-.07em;line-height:.82}
+  .quote-section blockquote{letter-spacing:-.07em;line-height:1.02}
+  .footer-mark b{letter-spacing:-.05em;line-height:.92}
+}
