@@ -25,12 +25,14 @@ footer{background:#080808;color:#fff;padding:70px 7vw 30px}.footer-mark{display:
 .tour-section{grid-template-columns:1fr 1fr}
 .visit{grid-template-columns:1fr 1fr}
 .visit h2,.quote-section blockquote{font-size:clamp(28px,4vw,60px)}
+.hero h1,.section h2,.equipment h2,.visit h2,.tour-section h2,.quote-section blockquote{letter-spacing:-.08em}
+.footer-mark b{letter-spacing:-.06em}
 @media(max-width:900px){.tour-section,.visit{grid-template-columns:1fr}}
 @media(max-width:767px){
-  .hero h1{letter-spacing:-.07em;line-height:.74}
-  .section h2{letter-spacing:-.07em;line-height:.86}
-  .equipment h2{letter-spacing:-.07em;line-height:.8}
-  .visit h2,.tour-section h2{letter-spacing:-.07em;line-height:.82}
-  .quote-section blockquote{letter-spacing:-.07em;line-height:1.02}
-  .footer-mark b{letter-spacing:-.05em;line-height:.92}
+  .hero h1{letter-spacing:-.04em;line-height:.82}
+  .section h2{letter-spacing:-.04em;line-height:.92}
+  .equipment h2{letter-spacing:-.04em;line-height:.88}
+  .visit h2,.tour-section h2{letter-spacing:-.04em;line-height:.9}
+  .quote-section blockquote{letter-spacing:-.035em;line-height:1.1}
+  .footer-mark b{letter-spacing:-.03em;line-height:.98}
 }
