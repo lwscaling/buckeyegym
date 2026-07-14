@@ -24,4 +24,5 @@ footer{background:#080808;color:#fff;padding:70px 7vw 30px}.footer-mark{display:
 .equipment-image img,.equipment-image:hover img{filter:none;transform:none;transition:none}
 .tour-section{grid-template-columns:1fr 1fr}
 .visit{grid-template-columns:1fr 1fr}
+.visit h2{font-size:clamp(54px,6vw,96px)}
 @media(max-width:900px){.tour-section,.visit{grid-template-columns:1fr}}
