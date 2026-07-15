@@ -27,6 +27,13 @@ footer{background:#080808;color:#fff;padding:70px 7vw 30px}.footer-mark{display:
 .visit h2,.quote-section blockquote{font-size:clamp(28px,4vw,60px)}
 .hero h1,.section h2,.equipment h2,.visit h2,.tour-section h2,.quote-section blockquote{letter-spacing:-.08em}
 .footer-mark b{letter-spacing:-.06em}
+.button svg,.join svg,.text-link svg{width:16px;height:16px;display:block;stroke-width:1.8}
+.review-controls button,.lightbox-arrow{display:inline-flex;align-items:center;justify-content:center}
+.review-controls button svg,.lightbox-arrow svg{width:20px;height:20px;stroke-width:1.7}
+.lightbox-close{display:flex;align-items:center;gap:7px}.lightbox-close svg{width:16px;height:16px;stroke-width:1.7}
+.inline-icon{width:1em;height:1em;display:inline-block;vertical-align:-.14em;stroke-width:1.8}
+.footer-links a{display:inline-flex;align-items:center;gap:7px}
+.scroll-mark span svg{width:14px;height:14px;stroke-width:1.7}
 @media(max-width:900px){.tour-section,.visit{grid-template-columns:1fr}}
 @media(max-width:767px){
   .hero h1{letter-spacing:-.04em;line-height:.82}

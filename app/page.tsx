@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight, X } from "lucide-react";
 
 const signup = "https://buckeyegym.gymmasteronline.com/portal/signup";
 
@@ -64,7 +65,7 @@ export default function Home() {
         <nav className={menu ? "nav open" : "nav"} aria-label="Main navigation">
           {[["The Gym","about"],["Memberships","memberships"],["Reviews","reviews"],["Gallery","gallery"],["Visit","visit"]].map(([label,id]) => <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>{label}</a>)}
         </nav>
-        <a className="join join-desktop" href={signup} target="_blank" rel="noreferrer">Join the gym <span>↗</span></a>
+        <a className="join join-desktop" href={signup} target="_blank" rel="noreferrer">Join the gym <span><ArrowUpRight aria-hidden="true"/></span></a>
         <button className="menu" onClick={() => setMenu(!menu)} aria-expanded={menu} aria-label="Toggle navigation"><i/><i/></button>
       </header>
 
@@ -73,22 +74,22 @@ export default function Home() {
         <div className="hero-noise"/>
         <div className="hero-content">
           <p className="eyebrow">Tallmadge, Ohio · Family owned</p>
-          <h1>Built for<br/><em>the work.</em></h1>
+          <h1>Welcome to<br/><em>Buckeye</em> Gym</h1>
           <p className="hero-copy">No gimmicks. No crowds taking mirror selfies. Just serious equipment, people who give a damn, and a place to get stronger.</p>
           <div className="hero-actions">
-            <a className="button red" href={signup} target="_blank" rel="noreferrer">Start training <span>↗</span></a>
-            <a className="text-link" href="#memberships">See memberships <span>↓</span></a>
+            <a className="button red" href={signup} target="_blank" rel="noreferrer">Start training <span><ArrowUpRight aria-hidden="true"/></span></a>
+            <a className="text-link" href="#memberships">See memberships <span><ArrowDown aria-hidden="true"/></span></a>
           </div>
         </div>
-        <div className="hero-stamp"><strong>80+</strong><span>Five-star<br/>Google reviews</span></div>
-        <div className="scroll-mark">Scroll to enter <span>↓</span></div>
+        <div className="hero-stamp"><strong>90+</strong><span>Five-star<br/>Google reviews</span></div>
+        <div className="scroll-mark">Scroll to enter <span><ArrowDown aria-hidden="true"/></span></div>
       </section>
 
       <div className="ticker" aria-hidden="true"><div>{[0,1,2,3,4,5].map((copy) => <span key={copy}>IRON • EFFORT • COMMUNITY • NO CONTRACTS • OLD SCHOOL • WALK-INS WELCOME • </span>)}</div></div>
 
       <section className="manifesto section" id="about">
         <div className="manifesto-head reveal"><div className="section-tag">01 / The gym</div><p className="kicker">This is not a wellness club.</p><h2>A real gym for people who are <em>here to train.</em></h2></div>
-        <div className="manifesto-aside reveal"><span>What makes us different</span><p>At Buckeye Gym, you&apos;re not a number. You&apos;re part of a crew that pushes harder, lifts heavier, and shows up for more than just a workout.</p><a className="text-link dark" href="#visit">Come see the place <span>→</span></a></div>
+        <div className="manifesto-aside reveal"><span>What makes us different</span><p>At Buckeye Gym, you&apos;re not a number. You&apos;re part of a crew that pushes harder, lifts heavier, and shows up for more than just a workout.</p><a className="text-link dark" href="#visit">Come see the place <span><ArrowRight aria-hidden="true"/></span></a></div>
         <div className="values reveal">
           <article><span>01</span><h3>Old school</h3><p>We train hard, sweat harder, and get real results.</p></article>
           <article><span>02</span><h3>No hidden fees</h3><p>What you see is what you get. No contracts. No surprises.</p></article>
@@ -106,10 +107,10 @@ export default function Home() {
           <ul>
             <li><b>Free weights</b><span>Dumbbells, benches, racks and platforms.</span></li>
             <li><b>Serious machines</b><span>A deep lineup for every training split.</span></li>
-            <li><b>Coaching</b><span>Personal training and nutrition built around you.</span></li>
+            <li><b>Coaching</b><span>Personal training and nutrition.</span></li>
             <li><b>Space to work</b><span>Clean floors, open room, and no nonsense.</span></li>
           </ul>
-          <a className="button outline" href="#gallery">See the gym <span>↓</span></a>
+          <a className="button outline" href="#gallery">See the gym <span><ArrowDown aria-hidden="true"/></span></a>
         </div>
       </section>
 
@@ -122,10 +123,10 @@ export default function Home() {
             {plan.badge && <p className="plan-badge">{plan.badge}</p>}
             <p className="price"><strong>{plan.price}</strong><small>{plan.note}</small></p>
             <ul>{plan.items.map(item => <li key={item}>✓ {item}</li>)}</ul>
-            <a className={i === 1 ? "button red full" : "button black full"} href={signup} target="_blank" rel="noreferrer">Choose this plan <span>↗</span></a>
+            <a className={i === 1 ? "button red full" : "button black full"} href={signup} target="_blank" rel="noreferrer">Choose this plan <span><ArrowUpRight aria-hidden="true"/></span></a>
           </article>)}
         </div>
-        <p className="pricing-note reveal">No long-term contracts. Discounts require valid ID. <a href="tel:+13306333084">Questions? Call (330) 633-3084 →</a></p>
+        <p className="pricing-note reveal">No long-term contracts. Discounts require valid ID. <a href="tel:+13306333084">Questions? Call (330) 633-3084 <ArrowRight className="inline-icon" aria-hidden="true"/></a></p>
       </section>
 
       <section className="quote-section" id="reviews">
@@ -133,20 +134,20 @@ export default function Home() {
         <div className="big-quote reveal">“</div>
         <blockquote className="quote-copy" key={review}>{reviews[review].quote}</blockquote>
         <div className="quote-meta reveal"><span>★★★★★</span><p><b>{reviews[review].name}</b><br/>Buckeye Gym member</p></div>
-        <div className="review-controls reveal"><span>{String(review+1).padStart(2,"0")} / {String(reviews.length).padStart(2,"0")}</span><div><button onClick={() => setReview((review - 1 + reviews.length) % reviews.length)} aria-label="Previous review">←</button><button onClick={() => setReview((review + 1) % reviews.length)} aria-label="Next review">→</button></div></div>
+        <div className="review-controls reveal"><span>{String(review+1).padStart(2,"0")} / {String(reviews.length).padStart(2,"0")}</span><div><button onClick={() => setReview((review - 1 + reviews.length) % reviews.length)} aria-label="Previous review"><ArrowLeft aria-hidden="true"/></button><button onClick={() => setReview((review + 1) % reviews.length)} aria-label="Next review"><ArrowRight aria-hidden="true"/></button></div></div>
       </section>
 
       <section className="gallery section" id="gallery">
         <div className="section-tag reveal">05 / Inside Buckeye</div>
-        <div className="gallery-head reveal"><h2>No staged shots.<br/><em>This is the place.</em></h2><a className="text-link dark" href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Follow on Instagram <span>↗</span></a></div>
+        <div className="gallery-head reveal"><h2>No staged shots.<br/><em>This is the place.</em></h2><a className="text-link dark" href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Follow on Instagram <span><ArrowUpRight aria-hidden="true"/></span></a></div>
         <div className="gallery-grid reveal">{gallery.map((img, i) => <figure key={img} className="photo"><button onClick={() => setLightbox(i)} aria-label={`Open gallery image ${i+1}`}><img src={`/gym/${img}`} alt={`Buckeye Gym equipment and training floor ${i+1}`}/><span>{String(i+1).padStart(2,"0")}</span></button></figure>)}</div>
       </section>
 
       {lightbox !== null && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Buckeye Gym photo gallery">
-        <button className="lightbox-close" onClick={() => setLightbox(null)} aria-label="Close gallery">Close ×</button>
-        <button className="lightbox-arrow prev" onClick={() => setLightbox((lightbox - 1 + gallery.length) % gallery.length)} aria-label="Previous image">←</button>
+        <button className="lightbox-close" onClick={() => setLightbox(null)} aria-label="Close gallery">Close <X aria-hidden="true"/></button>
+        <button className="lightbox-arrow prev" onClick={() => setLightbox((lightbox - 1 + gallery.length) % gallery.length)} aria-label="Previous image"><ArrowLeft aria-hidden="true"/></button>
         <figure><img src={`/gym/${gallery[lightbox]}`} alt={`Buckeye Gym gallery image ${lightbox+1}`}/><figcaption>{String(lightbox+1).padStart(2,"0")} / {gallery.length}</figcaption></figure>
-        <button className="lightbox-arrow next" onClick={() => setLightbox((lightbox + 1) % gallery.length)} aria-label="Next image">→</button>
+        <button className="lightbox-arrow next" onClick={() => setLightbox((lightbox + 1) % gallery.length)} aria-label="Next image"><ArrowRight aria-hidden="true"/></button>
       </div>}
 
       <section className="trainers section" id="trainers">
@@ -171,17 +172,17 @@ export default function Home() {
           <div className="section-tag light">08 / Get in here</div>
           <h2>Your first set<br/>starts <em>here.</em></h2>
           <div className="visit-grid">
-            <div><span>Find us</span><p>137 East Ave, Suite 102<br/>Tallmadge, OH 44278</p><a href="https://maps.google.com/?q=137+East+Ave+Suite+102+Tallmadge+OH+44278" target="_blank" rel="noreferrer">Get directions ↗</a></div>
+            <div><span>Find us</span><p>137 East Ave, Suite 102<br/>Tallmadge, OH 44278</p><a href="https://maps.google.com/?q=137+East+Ave+Suite+102+Tallmadge+OH+44278" target="_blank" rel="noreferrer">Get directions <ArrowUpRight className="inline-icon" aria-hidden="true"/></a></div>
             <div><span>Hours</span><p>Mon–Fri · 4:30am–9pm<br/>Saturday · 8am–5pm<br/>Sunday · 9am–4pm</p></div>
             <div><span>Talk to us</span><p><a href="tel:+13306333084">(330) 633-3084</a><br/><a href="mailto:rkpropst11@yahoo.com">rkpropst11@yahoo.com</a></p></div>
           </div>
-          <a className="button red" href={signup} target="_blank" rel="noreferrer">Join Buckeye Gym <span>↗</span></a>
+          <a className="button red" href={signup} target="_blank" rel="noreferrer">Join Buckeye Gym <span><ArrowUpRight aria-hidden="true"/></span></a>
         </div>
       </section>
 
       <footer>
         <div className="footer-mark"><span><img src="/gym/9751049e95a4cbf8.gif" alt="Buckeye Gym mascot"/></span><b>Respect the gym.<br/>Respect your fellow lifters.<br/><em>Respect yourself.</em></b></div>
-        <div className="footer-links"><a href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="#top">Back to top ↑</a></div>
+        <div className="footer-links"><a href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight className="inline-icon" aria-hidden="true"/></a><a href="#top">Back to top <ArrowUp className="inline-icon" aria-hidden="true"/></a></div>
         <div className="copyright">© {new Date().getFullYear()} Buckeye Gym · Tallmadge, Ohio</div>
       </footer>
     </main>
