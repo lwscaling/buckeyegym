@@ -15,8 +15,9 @@
 
 # next.js
 /.next/
-/.vinext/
 /out/
+/.netlify/
+/.pnpm-store/
 
 # misc
 .DS_Store
