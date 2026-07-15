@@ -36,6 +36,7 @@ footer{background:#080808;color:#fff;padding:70px 7vw 30px}.footer-mark{display:
 .scroll-mark span svg{width:14px;height:14px;stroke-width:1.7}
 .hero h1{display:flex;flex-direction:column;align-items:flex-start;white-space:normal;line-height:1;margin:28px 0 34px}
 .hero h1 .hero-brand{display:flex;flex-direction:column;align-items:flex-start;white-space:nowrap;font-size:clamp(84px,12vw,180px);line-height:.7;letter-spacing:-.08em}
+.hero h1 .hero-brand em{color:#ed3329;text-shadow:0 3px 22px rgba(0,0,0,.72),0 1px 3px rgba(0,0,0,.95);-webkit-text-stroke:.45px rgba(0,0,0,.42)}
 .hero h1 .hero-gym{display:block;color:#fff;font-style:italic;margin-left:.04em}
 @media(max-width:900px){.tour-section,.visit{grid-template-columns:1fr}}
 @media(max-width:767px){
