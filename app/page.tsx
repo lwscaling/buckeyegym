@@ -74,7 +74,7 @@ export default function Home() {
         <div className="hero-noise"/>
         <div className="hero-content">
           <p className="eyebrow">Tallmadge, Ohio · Family owned</p>
-          <h1><span className="hero-brand"><em>Buckeye</em> Gym</span><span className="hero-promise">Built for the work.</span></h1>
+          <h1><span className="hero-brand"><em>Buckeye</em><span className="hero-gym">Gym</span></span></h1>
           <p className="hero-copy">No gimmicks. No crowds taking mirror selfies. Just serious equipment, people who give a damn, and a place to get stronger.</p>
           <div className="hero-actions">
             <a className="button red" href={signup} target="_blank" rel="noreferrer">Start training <span><ArrowUpRight aria-hidden="true"/></span></a>

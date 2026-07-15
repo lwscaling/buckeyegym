@@ -35,13 +35,12 @@ footer{background:#080808;color:#fff;padding:70px 7vw 30px}.footer-mark{display:
 .footer-links a{display:inline-flex;align-items:center;gap:7px}
 .scroll-mark span svg{width:14px;height:14px;stroke-width:1.7}
 .hero h1{display:flex;flex-direction:column;align-items:flex-start;white-space:normal;line-height:1;margin:28px 0 34px}
-.hero h1 .hero-brand{display:block;white-space:nowrap;font-size:clamp(76px,10.6vw,160px);line-height:.78;letter-spacing:-.08em}
-.hero h1 .hero-promise{display:block;margin-top:28px;font-family:Arial,Helvetica,sans-serif;font-size:clamp(25px,3.1vw,48px);font-weight:800;line-height:1;letter-spacing:.035em;color:#fff}
+.hero h1 .hero-brand{display:flex;flex-direction:column;align-items:flex-start;white-space:nowrap;font-size:clamp(84px,12vw,180px);line-height:.7;letter-spacing:-.08em}
+.hero h1 .hero-gym{display:block;color:#fff;font-style:italic;margin-left:.04em}
 @media(max-width:900px){.tour-section,.visit{grid-template-columns:1fr}}
 @media(max-width:767px){
   .hero h1{line-height:1;margin:24px 0 30px}
-  .hero h1 .hero-brand{font-size:17vw;letter-spacing:-.055em;line-height:.82}
-  .hero h1 .hero-promise{font-size:7.3vw;letter-spacing:.025em;line-height:1.05;margin-top:20px}
+  .hero h1 .hero-brand{font-size:20vw;letter-spacing:-.055em;line-height:.73}
   .section h2{letter-spacing:-.04em;line-height:.92}
   .equipment h2{letter-spacing:-.04em;line-height:.88}
   .visit h2,.tour-section h2{letter-spacing:-.04em;line-height:.9}
