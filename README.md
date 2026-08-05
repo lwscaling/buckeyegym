@@ -23,14 +23,15 @@ npm run build
 npm start
 ```
 
-## Deploying to Netlify
+## Deploying to Cloudflare Workers
 
 1. Push this repository to GitHub.
-2. In Netlify, choose **Add new site → Import an existing project**.
-3. Select the GitHub repository.
-4. Netlify will detect Next.js automatically.
-5. Use `npm run build` as the build command if Netlify does not populate it automatically.
-6. Deploy the site.
+2. Connect the repository to the `buckeyegym` Worker in Cloudflare.
+3. Use `npm run build` as the build command.
+4. Use `npx wrangler deploy` as the deploy command.
+
+The checked-in `wrangler.jsonc` deploys the static `out/` directory. It intentionally
+contains no Worker service bindings.
 
 No environment variables, database, or external server configuration are required.
 
