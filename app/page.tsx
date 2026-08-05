@@ -183,7 +183,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-mark"><span><img src="/gym/9751049e95a4cbf8.gif" alt="Buckeye Gym mascot" loading="lazy" decoding="async"/></span><b>Respect the gym.<br/>Respect your fellow lifters.<br/><em>Respect yourself.</em></b></div>
-        <div className="footer-links"><a href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight className="inline-icon" aria-hidden="true"/></a><a href="#top">Back to top <ArrowUp className="inline-icon" aria-hidden="true"/></a></div>
+        <div className="footer-links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight className="inline-icon" aria-hidden="true"/></a><a href="#top">Back to top <ArrowUp className="inline-icon" aria-hidden="true"/></a></div>
         <div className="copyright">© {new Date().getFullYear()} Buckeye Gym · Tallmadge, Ohio</div>
       </footer>
     </main>
