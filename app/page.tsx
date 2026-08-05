@@ -59,7 +59,8 @@ export default function Home() {
   }, [lightbox]);
 
   return (
-    <main>
+    <main id="main-content">
+      <a className="skip-link" href="#top">Skip to main content</a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Buckeye Gym home"><span className="brand-icon"><img src="/gym/9751049e95a4cbf8.gif" alt=""/></span><b>BUCKEYE<br/>GYM</b></a>
         <nav className={menu ? "nav open" : "nav"} aria-label="Main navigation">
@@ -99,7 +100,7 @@ export default function Home() {
       </section>
 
       <section className="equipment">
-        <div className="equipment-image reveal"><img src="/gym/5ea8f1fda7527042.jpeg" alt="The bodybuilding mural and weight floor at Buckeye Gym"/></div>
+        <div className="equipment-image reveal"><img src="/gym/5ea8f1fda7527042.jpeg" alt="The bodybuilding mural and weight floor at Buckeye Gym" loading="lazy" decoding="async"/></div>
         <div className="equipment-copy reveal">
           <div className="section-tag light">02 / What&apos;s inside</div>
           <p className="kicker">Everything you need. Nothing you don&apos;t.</p>
@@ -132,7 +133,7 @@ export default function Home() {
       <section className="quote-section" id="reviews">
         <div className="section-tag light reveal">04 / The word around town</div>
         <div className="big-quote reveal">“</div>
-        <blockquote className="quote-copy" key={review}>{reviews[review].quote}</blockquote>
+        <blockquote className="quote-copy" key={review} aria-live="polite">{reviews[review].quote}</blockquote>
         <div className="quote-meta reveal"><span>★★★★★</span><p><b>{reviews[review].name}</b><br/>Buckeye Gym member</p></div>
         <div className="review-controls reveal"><span>{String(review+1).padStart(2,"0")} / {String(reviews.length).padStart(2,"0")}</span><div><button onClick={() => setReview((review - 1 + reviews.length) % reviews.length)} aria-label="Previous review"><ArrowLeft aria-hidden="true"/></button><button onClick={() => setReview((review + 1) % reviews.length)} aria-label="Next review"><ArrowRight aria-hidden="true"/></button></div></div>
       </section>
@@ -140,7 +141,7 @@ export default function Home() {
       <section className="gallery section" id="gallery">
         <div className="section-tag reveal">05 / Inside Buckeye</div>
         <div className="gallery-head reveal"><h2>No staged shots.<br/><em>This is the place.</em></h2><a className="text-link dark" href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Follow on Instagram <span><ArrowUpRight aria-hidden="true"/></span></a></div>
-        <div className="gallery-grid reveal">{gallery.map((img, i) => <figure key={img} className="photo"><button onClick={() => setLightbox(i)} aria-label={`Open gallery image ${i+1}`}><img src={`/gym/${img}`} alt={`Buckeye Gym equipment and training floor ${i+1}`}/><span>{String(i+1).padStart(2,"0")}</span></button></figure>)}</div>
+        <div className="gallery-grid reveal">{gallery.map((img, i) => <figure key={img} className="photo"><button onClick={() => setLightbox(i)} aria-label={`Open gallery image ${i+1}`}><img src={`/gym/${img}`} alt={`Buckeye Gym equipment and training floor ${i+1}`} loading="lazy" decoding="async"/><span>{String(i+1).padStart(2,"0")}</span></button></figure>)}</div>
       </section>
 
       {lightbox !== null && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Buckeye Gym photo gallery">
@@ -155,7 +156,7 @@ export default function Home() {
         <div className="trainers-head reveal"><p className="kicker">Coaching with receipts.</p><h2>Meet your<br/><em>trainers.</em></h2></div>
         <div className="trainer-grid reveal">
           {trainers.map((trainer, i) => <article className="trainer" key={trainer.name}>
-            <figure><img src={`/gym/${trainer.image}`} alt={`${trainer.name}, Buckeye Gym trainer`}/><span>0{i+1}</span></figure>
+            <figure><img src={`/gym/${trainer.image}`} alt={`${trainer.name}, Buckeye Gym trainer`} loading="lazy" decoding="async"/><span>0{i+1}</span></figure>
             <div><h3>{trainer.name}</h3><ul>{trainer.details.map(detail => <li key={detail}>{detail}</li>)}</ul></div>
           </article>)}
         </div>
@@ -167,7 +168,7 @@ export default function Home() {
       </section>
 
       <section className="visit" id="visit">
-        <div className="visit-image"><img src="/gym/35909c57bf2c49d1.jpeg" alt="Buckeye Gym weight floor"/></div>
+        <div className="visit-image"><img src="/gym/35909c57bf2c49d1.jpeg" alt="Buckeye Gym weight floor" loading="lazy" decoding="async"/></div>
         <div className="visit-content reveal">
           <div className="section-tag light">08 / Get in here</div>
           <h2>Your first set<br/>starts <em>here.</em></h2>
@@ -181,7 +182,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-mark"><span><img src="/gym/9751049e95a4cbf8.gif" alt="Buckeye Gym mascot"/></span><b>Respect the gym.<br/>Respect your fellow lifters.<br/><em>Respect yourself.</em></b></div>
+        <div className="footer-mark"><span><img src="/gym/9751049e95a4cbf8.gif" alt="Buckeye Gym mascot" loading="lazy" decoding="async"/></span><b>Respect the gym.<br/>Respect your fellow lifters.<br/><em>Respect yourself.</em></b></div>
         <div className="footer-links"><a href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight className="inline-icon" aria-hidden="true"/></a><a href="#top">Back to top <ArrowUp className="inline-icon" aria-hidden="true"/></a></div>
         <div className="copyright">© {new Date().getFullYear()} Buckeye Gym · Tallmadge, Ohio</div>
       </footer>
