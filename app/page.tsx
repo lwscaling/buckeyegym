@@ -62,7 +62,7 @@ export default function Home() {
     <main id="main-content">
       <a className="skip-link" href="#top">Skip to main content</a>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Buckeye Gym home"><span className="brand-icon"><img src="/gym/9751049e95a4cbf8.gif" alt=""/></span><b>BUCKEYE<br/>GYM</b></a>
+        <a className="brand" href="#top" aria-label="Buckeye Gym home"><span className="brand-icon"><img src="/gym/9751049e95a4cbf8.gif" alt=""/></span></a>
         <nav className={menu ? "nav open" : "nav"} aria-label="Main navigation">
           {[["The Gym","about"],["Memberships","memberships"],["Reviews","reviews"],["Gallery","gallery"],["Visit","visit"]].map(([label,id]) => <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>{label}</a>)}
         </nav>
@@ -76,14 +76,13 @@ export default function Home() {
         <div className="hero-content">
           <p className="eyebrow">Tallmadge, Ohio · Family owned</p>
           <h1><span className="hero-brand"><em>Buckeye</em><span className="hero-gym">Gym</span></span></h1>
-          <p className="hero-copy">No gimmicks. No crowds taking mirror selfies. Just serious equipment, people who give a damn, and a place to get stronger.</p>
+          <p className="hero-copy">Tallmadge&apos;s family-owned gym. We&apos;re loaded with free weights, serious machines, and people who want to train.</p>
           <div className="hero-actions">
             <a className="button red" href={signup} target="_blank" rel="noreferrer">Start training <span><ArrowUpRight aria-hidden="true"/></span></a>
             <a className="text-link" href="#memberships">See memberships <span><ArrowDown aria-hidden="true"/></span></a>
           </div>
         </div>
         <div className="hero-stamp"><strong>90+</strong><span>Five-star<br/>Google reviews</span></div>
-        <div className="scroll-mark">Scroll to enter <span><ArrowDown aria-hidden="true"/></span></div>
       </section>
 
       <div className="ticker" aria-hidden="true"><div>{[0,1,2,3,4,5].map((copy) => <span key={copy}>IRON • EFFORT • COMMUNITY • NO CONTRACTS • OLD SCHOOL • WALK-INS WELCOME • </span>)}</div></div>
@@ -106,10 +105,10 @@ export default function Home() {
           <p className="kicker">Everything you need. Nothing you don&apos;t.</p>
           <h2>Built around <em>iron.</em></h2>
           <ul>
-            <li><b>Free weights</b><span>Dumbbells, benches, racks and platforms.</span></li>
+            <li><b>Free weights</b><span>Dumbbells, benches, racks, and platforms.</span></li>
             <li><b>Serious machines</b><span>A deep lineup for every training split.</span></li>
             <li><b>Coaching</b><span>Personal training and nutrition.</span></li>
-            <li><b>Space to work</b><span>Clean floors, open room, and no nonsense.</span></li>
+            <li><b>Space to work</b><span>Clean floors and open room.</span></li>
           </ul>
           <a className="button outline" href="#gallery">See the gym <span><ArrowDown aria-hidden="true"/></span></a>
         </div>
@@ -117,7 +116,7 @@ export default function Home() {
 
       <section className="pricing section" id="memberships">
         <div className="section-tag reveal">03 / Memberships</div>
-        <div className="pricing-head reveal"><p className="kicker">Simple pricing. Zero games.</p><h2>Pick your plan.<br/><em>Get to work.</em></h2></div>
+        <div className="pricing-head reveal"><p className="kicker">Simple pricing.</p><h2>Pick your plan.<br/><em>Get to work.</em></h2></div>
         <div className="plan-grid reveal">
           {plans.map((plan, i) => <article className={i === 1 ? "plan featured" : "plan"} key={plan.name}>
             <div className="plan-top"><span>0{i+1}</span><h3>{plan.name}</h3></div>
@@ -153,7 +152,7 @@ export default function Home() {
 
       <section className="trainers section" id="trainers">
         <div className="section-tag reveal">06 / Our team</div>
-        <div className="trainers-head reveal"><p className="kicker">Coaching with receipts.</p><h2>Meet your<br/><em>trainers.</em></h2></div>
+        <div className="trainers-head reveal"><p className="kicker">Coaching with receipts.</p><h2>Meet our<br/><em>trainers.</em></h2></div>
         <div className="trainer-grid reveal">
           {trainers.map((trainer, i) => <article className="trainer" key={trainer.name}>
             <figure><img src={`/gym/${trainer.image}`} alt={`${trainer.name}, Buckeye Gym trainer`} loading="lazy" decoding="async"/><span>0{i+1}</span></figure>
