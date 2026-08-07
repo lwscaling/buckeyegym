@@ -62,7 +62,7 @@ export default function Home() {
     <main id="main-content">
       <a className="skip-link" href="#top">Skip to main content</a>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Buckeye Gym home"><span className="brand-icon"><img src="/gym/9751049e95a4cbf8.gif" alt=""/></span></a>
+        <a className="brand" href="#top" aria-label="Buckeye Gym home"><span className="brand-icon"><img src="/gym/buckeye-header-white.png" alt=""/></span></a>
         <nav className={menu ? "nav open" : "nav"} aria-label="Main navigation">
           {[["The Gym","about"],["Memberships","memberships"],["Reviews","reviews"],["Gallery","gallery"],["Visit","visit"]].map(([label,id]) => <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>{label}</a>)}
         </nav>
