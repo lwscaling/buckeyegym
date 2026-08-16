@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight, X } from "lucide-react";
 
 const signup = "https://buckeyegym.gymmasteronline.com/portal/signup";
+const googleReviews = "https://www.google.com/maps/search/?api=1&query=Buckeye+Gym%2C+137+East+Ave+Suite+102%2C+Tallmadge%2C+OH+44278";
 
 const plans = [
   { name: "Regular", price: "$42.70", note: "/ month", items: ["Full gym access", "Trainer support", "Locker room & showers", "Unlimited access"] },
@@ -12,12 +13,12 @@ const plans = [
 ];
 
 const gallery = [
-  "e7d80179147f271f.jpeg", "5dd202989792a5e5.jpeg", "4e7450bf25309c95.jpeg",
-  "bf5055086068682e.jpeg", "652984d35bba5e73.jpeg", "616e203de79550f4.jpeg",
-  "0f7b05a0e79d5535.jpeg", "10d20400103eb4c6.jpeg", "cf7348ead5871a6c.jpeg",
-  "4d201604b9ea814a.jpeg", "4c14091987713d60.jpeg", "23373d50af7a035c.jpeg",
-  "cdc4acc0bbe56837.jpeg", "e3abbaa383dccdee.jpeg", "8147990525c8681d.jpeg",
-  "da51a325223cc654.jpeg",
+  "e7d80179147f271f.webp", "5dd202989792a5e5.webp", "4e7450bf25309c95.webp",
+  "bf5055086068682e.webp", "652984d35bba5e73.webp", "616e203de79550f4.webp",
+  "0f7b05a0e79d5535.webp", "10d20400103eb4c6.webp", "cf7348ead5871a6c.webp",
+  "4d201604b9ea814a.webp", "4c14091987713d60.webp", "23373d50af7a035c.webp",
+  "cdc4acc0bbe56837.webp", "e3abbaa383dccdee.webp", "8147990525c8681d.webp",
+  "da51a325223cc654.webp",
 ];
 
 const reviews = [
@@ -25,18 +26,25 @@ const reviews = [
   { quote: "This is hands-down my favorite gym. The environment is always positive, motivating, and welcoming, whether you're just starting out or have been working out for years.", name: "Andrea Kumse" },
   { quote: "Best gym out there. The owners are awesome people and the staff is wonderful. They've created a cool community and we're thankful to be part of it.", name: "Rachel Hopp" },
   { quote: "Buckeye Gym is packed with every piece of equipment you could need. The atmosphere is inviting for both the seasoned lifter and the person trying it for the first time.", name: "Zach Williams" },
+  { quote: "Three and a half years in, the old-school look is still great—but the people and the culture are what make Buckeye feel like home.", name: "Max O." },
+  { quote: "I've trained here since 2015. The atmosphere, equipment selection, ownership, and knowledge are still the standard I compare every other gym against.", name: "Lindsey C." },
+  { quote: "Beginners and professional bodybuilders train side by side here. Everyone gets the same respect, and the owners genuinely care about every person who walks in.", name: "Derek F." },
+  { quote: "I've visited more than fifteen gyms across several states. Buckeye's community and equipment make it one of a kind.", name: "Vincent L." },
+  { quote: "Five years here and the gym keeps getting better—new equipment, improved flooring, thoughtful upgrades, and a place where beginners and pros both belong.", name: "Abigail D." },
+  { quote: "I've trained at Buckeye since 2007. The welcoming management, clean facility, and wide range of training options are the best they've ever been.", name: "Longtime Buckeye member" },
 ];
 
 const trainers = [
-  { name: "Megan Brown", image: "trainer-megan.jpeg", details: ["ISSA Certified Personal Trainer", "15+ Years in Gym Management", "Track & Volleyball Athlete & Coach", "Weight Loss, Rehab & Sports Performance"] },
-  { name: "Jason Lucas", image: "trainer-jason.jpeg", details: ["National Personal Training Institute Graduate", "ACE & Nutrition Certified", "10 Years Experience", "Over 10,000 Sessions", "8-Year Army Veteran"] },
-  { name: "Heather Pastirchak", image: "trainer-heather.png", details: ["Functional Diagnostic Nutrition Practitioner", "NASM Certified PT & Nutrition Coach", "In-Person & Online App Programs", "Physique Development, Performance Nutrition & Holistic Healing"] },
+  { name: "Megan Brown", image: "trainer-megan.webp", details: ["ISSA Certified Personal Trainer", "15+ Years in Gym Management", "Track & Volleyball Athlete & Coach", "Weight Loss, Rehab & Sports Performance"] },
+  { name: "Jason Lucas", image: "trainer-jason.webp", details: ["National Personal Training Institute Graduate", "ACE & Nutrition Certified", "10 Years Experience", "Over 10,000 Sessions", "8-Year Army Veteran"] },
+  { name: "Heather Pastirchak", image: "trainer-heather.webp", details: ["Functional Diagnostic Nutrition Practitioner", "NASM Certified PT & Nutrition Coach", "In-Person & Online App Programs", "Physique Development, Performance Nutrition & Holistic Healing"] },
 ];
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
   const [review, setReview] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [galleryExpanded, setGalleryExpanded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -73,35 +81,34 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-bg"/>
         <div className="hero-noise"/>
+        <div className="hero-character" aria-hidden="true"/>
         <div className="hero-content">
           <p className="eyebrow">Tallmadge, Ohio · Family owned</p>
           <h1><span className="hero-brand"><em>Buckeye</em><span className="hero-gym">Gym</span></span></h1>
-          <p className="hero-copy">Tallmadge&apos;s family-owned gym. We&apos;re loaded with free weights, serious machines, and people who want to train.</p>
           <div className="hero-actions">
             <a className="button red" href={signup} target="_blank" rel="noreferrer">Start training <span><ArrowUpRight aria-hidden="true"/></span></a>
             <a className="text-link" href="#memberships">See memberships <span><ArrowDown aria-hidden="true"/></span></a>
           </div>
         </div>
-        <div className="hero-stamp"><strong>90+</strong><span>Five-star<br/>Google reviews</span></div>
+        <a className="hero-stamp" href={googleReviews} target="_blank" rel="noreferrer" aria-label="Read Buckeye Gym reviews on Google"><strong>90+</strong><span>Five-star<br/>Google reviews</span></a>
       </section>
 
       <div className="ticker" aria-hidden="true"><div>{[0,1,2,3,4,5].map((copy) => <span key={copy}>IRON • EFFORT • COMMUNITY • NO CONTRACTS • OLD SCHOOL • WALK-INS WELCOME • </span>)}</div></div>
 
       <section className="manifesto section" id="about">
-        <div className="manifesto-head reveal"><div className="section-tag">01 / The gym</div><p className="kicker">This is not a wellness club.</p><h2>A real gym for people who are <em>here to train.</em></h2></div>
+        <div className="manifesto-head reveal"><p className="kicker">This is not a wellness club.</p><h2>A real gym for people who are <em>here to train.</em></h2></div>
         <div className="manifesto-aside reveal"><span>What makes us different</span><p>At Buckeye Gym, you&apos;re not a number. You&apos;re part of a crew that pushes harder, lifts heavier, and shows up for more than just a workout.</p><a className="text-link dark" href="#visit">Come see the place <span><ArrowRight aria-hidden="true"/></span></a></div>
         <div className="values reveal">
-          <article><span>01</span><h3>Old school</h3><p>We train hard, sweat harder, and get real results.</p></article>
-          <article><span>02</span><h3>No hidden fees</h3><p>What you see is what you get. No contracts. No surprises.</p></article>
-          <article><span>03</span><h3>Family owned</h3><p>Built on loyalty, respect, and real community values.</p></article>
-          <article><span>04</span><h3>Walk-ins welcome</h3><p>Drop in when you&apos;re ready. The weights are waiting.</p></article>
+          <article><h3>Old school</h3><p>We train hard, sweat harder, and get real results.</p></article>
+          <article><h3>No hidden fees</h3><p>What you see is what you get. No contracts. No surprises.</p></article>
+          <article><h3>Family owned</h3><p>Built on loyalty, respect, and real community values.</p></article>
+          <article><h3>Walk-ins welcome</h3><p>Drop in when you&apos;re ready. The weights are waiting.</p></article>
         </div>
       </section>
 
       <section className="equipment">
-        <div className="equipment-image reveal"><img src="/gym/5ea8f1fda7527042.jpeg" alt="The bodybuilding mural and weight floor at Buckeye Gym" loading="lazy" decoding="async"/></div>
+        <div className="equipment-image reveal"><img src="/gym/5ea8f1fda7527042.webp" alt="The bodybuilding mural and weight floor at Buckeye Gym" loading="lazy" decoding="async"/></div>
         <div className="equipment-copy reveal">
-          <div className="section-tag light">02 / What&apos;s inside</div>
           <p className="kicker">Everything you need. Nothing you don&apos;t.</p>
           <h2>Built around <em>iron.</em></h2>
           <ul>
@@ -115,11 +122,11 @@ export default function Home() {
       </section>
 
       <section className="pricing section" id="memberships">
-        <div className="section-tag reveal">03 / Memberships</div>
+        <div className="section-tag reveal">Memberships</div>
         <div className="pricing-head reveal"><p className="kicker">Simple pricing.</p><h2>Pick your plan.<br/><em>Get to work.</em></h2></div>
         <div className="plan-grid reveal">
           {plans.map((plan, i) => <article className={i === 1 ? "plan featured" : "plan"} key={plan.name}>
-            <div className="plan-top"><span>0{i+1}</span><h3>{plan.name}</h3></div>
+            <div className="plan-top"><h3>{plan.name}</h3></div>
             {plan.badge && <p className="plan-badge">{plan.badge}</p>}
             <p className="price"><strong>{plan.price}</strong><small>{plan.note}</small></p>
             <ul>{plan.items.map(item => <li key={item}>✓ {item}</li>)}</ul>
@@ -130,17 +137,20 @@ export default function Home() {
       </section>
 
       <section className="quote-section" id="reviews">
-        <div className="section-tag light reveal">04 / The word around town</div>
+        <div className="section-tag light reveal">The word around town</div>
         <div className="big-quote reveal">“</div>
-        <blockquote className="quote-copy" key={review} aria-live="polite">{reviews[review].quote}</blockquote>
+        <div className="quote-stage" aria-live="polite">
+          {reviews.map((item, index) => <blockquote className={index === review ? "quote-copy active" : "quote-copy"} aria-hidden={index !== review} key={item.name}>{item.quote}</blockquote>)}
+        </div>
         <div className="quote-meta reveal"><span>★★★★★</span><p><b>{reviews[review].name}</b><br/>Buckeye Gym member</p></div>
         <div className="review-controls reveal"><span>{String(review+1).padStart(2,"0")} / {String(reviews.length).padStart(2,"0")}</span><div><button onClick={() => setReview((review - 1 + reviews.length) % reviews.length)} aria-label="Previous review"><ArrowLeft aria-hidden="true"/></button><button onClick={() => setReview((review + 1) % reviews.length)} aria-label="Next review"><ArrowRight aria-hidden="true"/></button></div></div>
       </section>
 
       <section className="gallery section" id="gallery">
-        <div className="section-tag reveal">05 / Inside Buckeye</div>
+        <div className="section-tag reveal">Inside Buckeye</div>
         <div className="gallery-head reveal"><h2>No staged shots.<br/><em>This is the place.</em></h2><a className="text-link dark" href="https://www.instagram.com/buckeye_gym_/" target="_blank" rel="noreferrer">Follow on Instagram <span><ArrowUpRight aria-hidden="true"/></span></a></div>
-        <div className="gallery-grid reveal">{gallery.map((img, i) => <figure key={img} className="photo"><button onClick={() => setLightbox(i)} aria-label={`Open gallery image ${i+1}`}><img src={`/gym/${img}`} alt={`Buckeye Gym equipment and training floor ${i+1}`} loading="lazy" decoding="async"/><span>{String(i+1).padStart(2,"0")}</span></button></figure>)}</div>
+        <div className={`gallery-grid reveal${galleryExpanded ? " is-expanded" : ""}`}>{gallery.map((img, i) => <figure key={img} className={`photo${i >= 6 ? " gallery-extra" : ""}`}><button onClick={() => setLightbox(i)} aria-label={`Open gallery image ${i+1}`}><img src={`/gym/${img}`} alt={`Buckeye Gym equipment and training floor ${i+1}`} loading="lazy" decoding="async"/></button></figure>)}</div>
+        <button className="gallery-expand button black" type="button" onClick={() => setGalleryExpanded(true)} aria-expanded={galleryExpanded}>View all photos <span><ArrowDown aria-hidden="true"/></span></button>
       </section>
 
       {lightbox !== null && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Buckeye Gym photo gallery">
@@ -151,25 +161,24 @@ export default function Home() {
       </div>}
 
       <section className="trainers section" id="trainers">
-        <div className="section-tag reveal">06 / Our team</div>
+        <div className="section-tag reveal">Our team</div>
         <div className="trainers-head reveal"><p className="kicker">Coaching with receipts.</p><h2>Meet our<br/><em>trainers.</em></h2></div>
         <div className="trainer-grid reveal">
-          {trainers.map((trainer, i) => <article className="trainer" key={trainer.name}>
-            <figure><img src={`/gym/${trainer.image}`} alt={`${trainer.name}, Buckeye Gym trainer`} loading="lazy" decoding="async"/><span>0{i+1}</span></figure>
+          {trainers.map((trainer) => <article className="trainer" key={trainer.name}>
+            <figure><img src={`/gym/${trainer.image}`} alt={`${trainer.name}, Buckeye Gym trainer`} loading="lazy" decoding="async"/></figure>
             <div><h3>{trainer.name}</h3><ul>{trainer.details.map(detail => <li key={detail}>{detail}</li>)}</ul></div>
           </article>)}
         </div>
       </section>
 
       <section className="tour-section">
-        <div className="tour-copy reveal"><div className="section-tag light">07 / Virtual tour</div><p className="kicker">Walk the floor before you walk in.</p><h2>Take a look<br/><em>around.</em></h2><p>Move through the gym and see the equipment, layout, and atmosphere for yourself.</p></div>
+        <div className="tour-copy reveal"><p className="kicker">Walk the floor before you walk in.</p><h2>Take a look<br/><em>around.</em></h2><p>Move through the gym and see the equipment, layout, and atmosphere for yourself.</p></div>
         <div className="tour-frame reveal"><iframe src="https://www.google.com/maps/embed?pb=!4v1756912731193!6m8!1m7!1sCAoSHENJQUJJaERLVlJtOThqWktwMFozQ3NoRURQY3Y.!2m2!1d41.10235743997894!2d-81.43503416500457!3f101.68!4f-2.680000000000007!5f0.4000000000000002" title="Virtual tour of Buckeye Gym" loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade"/></div>
       </section>
 
       <section className="visit" id="visit">
         <div className="visit-image"><img src="/gym/35909c57bf2c49d1.jpeg" alt="Buckeye Gym weight floor" loading="lazy" decoding="async"/></div>
         <div className="visit-content reveal">
-          <div className="section-tag light">08 / Get in here</div>
           <h2>Your first set<br/>starts <em>here.</em></h2>
           <div className="visit-grid">
             <div><span>Find us</span><p>137 East Ave, Suite 102<br/>Tallmadge, OH 44278</p><a href="https://maps.google.com/?q=137+East+Ave+Suite+102+Tallmadge+OH+44278" target="_blank" rel="noreferrer">Get directions <ArrowUpRight className="inline-icon" aria-hidden="true"/></a></div>
