@@ -16,7 +16,7 @@ Marketing site for Buckeye Gym, a family-owned, old-school strength gym at 137 E
 
 ## Positioning
 
-A real iron gym since 1985, not a wellness club: deep free-weight and plate-loaded machine lineup (dumbbells to 190 lb), a hand-drawn Mr. Olympia bodybuilder mural across the walls, red walls and white/black/red machines, no contracts, no hidden fees, beginners and pro bodybuilders training side by side.
+A real iron gym since 1985, not a wellness club: deep free-weight and plate-loaded machine lineup (a 190 lb dumbbell is on the rack; the rack maximum is unconfirmed), a hand-drawn Mr. Olympia bodybuilder mural across the walls, red walls and white/black/red machines, no contracts, no hidden fees, beginners and pro bodybuilders training side by side.
 
 ## Operating Context
 
@@ -34,7 +34,7 @@ A real iron gym since 1985, not a wellness club: deep free-weight and plate-load
 ## Brand Commitments
 
 - Name: Buckeye Gym. "Since 1985" is confirmed and may be used.
-- Mascot: muscular buckeye-nut character (`public/gym/9751049e95a4cbf8.gif`, `buckeye-header-white.png`).
+- Mascot: muscular buckeye-nut character. Use the white cut-out `public/gym/buckeye-header-white.png` (as a CSS mask, recolored); the grey GIF loses its detail on dark grounds.
 - Vintage painted sign "Buckeye Gym · Since 1985 · Tallmadge · Ohio" (`public/gym/06e35c5d3070076d.png`).
 - Voice: blunt, old-school, respectful. House rule: "Respect the gym. Respect your fellow lifters. Respect yourself."
 - The gym's boxer dog appears in photos but must not be featured as a site element.

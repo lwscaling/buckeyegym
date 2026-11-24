@@ -128,7 +128,7 @@ export default function Home() {
       <a className="skip-link" href="#main-content">Skip to content</a>
 
       <header className={`bar${scrolled ? " is-shown" : ""}${menu ? " is-open" : ""}`}>
-        <a className="bar__mark" href="#top" aria-label="Buckeye Gym, back to top">Buckeye</a>
+        <a className="bar__mark" href="#top" aria-label="Buckeye Gym, back to top"><span className="mascot" aria-hidden="true"/>Buckeye</a>
         <nav className="bar__nav" aria-label="Main">
           {nav.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>{label}</a>)}
         </nav>
@@ -156,7 +156,7 @@ export default function Home() {
           <h1 className="cover__mast" id="cover-title">Buckeye<sup>Gym</sup></h1>
           <div className="cover__body">
             <div className="cover__lines">
-              <p className="cl cl--lead"><b>Dumbbells<br/>to <span>190 lb.</span></b><small>Plus a wall of plate-loaded iron</small></p>
+              <p className="cl cl--lead"><b>Real iron<br/>since <span>1985.</span></b><small>Family owned. Old school. Still here.</small></p>
               <p className="cl"><b>No contracts. <span>No hidden fees.</span></b><small>Monthly from $37.36</small></p>
             </div>
             <Burst/>
@@ -175,7 +175,7 @@ export default function Home() {
             <p>Buckeye has been a family-owned iron gym in Tallmadge since 1985. Beginners and pro bodybuilders train side by side on the same floor, under the same mural, with the same respect. You&apos;re not a number here. You&apos;re part of the crew.</p>
           </div>
           <ol className="contents__list" aria-label="In this issue">
-            <li><a href="#iron"><b>The iron</b><span>Racks, plate-loaded machines, dumbbells to 190</span><ArrowDown aria-hidden="true"/></a></li>
+            <li><a href="#iron"><b>The iron</b><span>Racks, plate-loaded machines, a deep dumbbell rack</span><ArrowDown aria-hidden="true"/></a></li>
             <li><a href="#rates"><b>Rates</b><span>No contracts. First visit free.</span><ArrowDown aria-hidden="true"/></a></li>
             <li><a href="#letters"><b>Letters</b><span>What the regulars say</span><ArrowDown aria-hidden="true"/></a></li>
             <li><a href="#coaches"><b>Coaches</b><span>Three trainers, real credentials</span><ArrowDown aria-hidden="true"/></a></li>
@@ -193,7 +193,7 @@ export default function Home() {
             <h2 id="iron-title">Built around <span>iron.</span></h2>
             <p className="iron__deck">Everything you need, nothing you don&apos;t. No juice bar, no tanning beds — just a deep floor of free weights and serious machines.</p>
             <ul className="iron__list">
-              <li><b>Free weights</b><span>Dumbbells to 190 lb, benches, racks and platforms.</span></li>
+              <li><b>Free weights</b><span>A deep dumbbell rack, benches, racks and platforms.</span></li>
               <li><b>Plate-loaded machines</b><span>Hack squat, leg press, levers and presses for every split.</span></li>
               <li><b>Coaching</b><span>Personal training and nutrition from three certified coaches.</span></li>
               <li><b>Room to work</b><span>Clean floors, open space, locker rooms and showers.</span></li>
@@ -205,7 +205,7 @@ export default function Home() {
         {/* RATES */}
         <section className="rates" id="rates" aria-labelledby="rates-title">
           <div className="rates__head">
-            <h2 id="rates-title">The price list.</h2>
+            <div className="rates__title"><span className="mascot mascot--ink" aria-hidden="true"/><h2 id="rates-title">The price list.</h2></div>
             <p>No contracts. No sign-up fees hiding in the fine print. Pick a plan or just walk in.</p>
           </div>
           <div className="rates__grid">
@@ -291,7 +291,7 @@ export default function Home() {
         {/* VISIT */}
         <section className="visit" id="visit" aria-labelledby="visit-title">
           <div className="visit__head">
-            <h2 id="visit-title">Come lift.</h2>
+            <h2 id="visit-title">Come lift.<span className="mascot" aria-hidden="true"/></h2>
             <p>Your first visit is free. Just walk in during open hours and tell the desk it&apos;s your first time.</p>
             {statusPill}
           </div>
@@ -322,7 +322,7 @@ export default function Home() {
 
       <footer className="foot">
         <div className="foot__rules">
-          <img src="/gym/9751049e95a4cbf8.gif" alt="" loading="lazy" decoding="async"/>
+          <span className="mascot" role="img" aria-label="Buckeye Gym mascot"/>
           <p>Respect the gym.<br/>Respect your fellow lifters.<br/><span>Respect yourself.</span></p>
         </div>
         <div className="foot__row">
