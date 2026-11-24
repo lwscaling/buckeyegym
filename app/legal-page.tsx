@@ -6,7 +6,7 @@ type Section = { id: string; title: string; content: ReactNode };
 export default function LegalPage({ eyebrow, title, intro, sections }: { eyebrow: string; title: string; intro: string; sections: Section[] }) {
   return <main className="legal-page" id="main-content">
     <a className="skip-link" href="#legal-content">Skip to policy</a>
-    <header className="legal-nav"><Link className="brand" href="/" aria-label="Buckeye Gym home"><span className="mascot" aria-hidden="true"/>Buckeye</Link><Link className="legal-back" href="/">Back to the gym</Link></header>
+    <header className="legal-nav"><Link className="brand" href="/" aria-label="Buckeye Gym home"><span className="mascot" aria-hidden="true"/><span className="wordmark">Buckeye <span>Gym</span></span></Link><Link className="legal-back" href="/">Back to the gym</Link></header>
     <section className="legal-hero"><p>{eyebrow}</p><h1>{title}</h1><div><span>Effective August 5, 2026</span><p>{intro}</p></div></section>
     <div className="legal-layout" id="legal-content">
       <aside aria-label={`${title} sections`}><p>On this page</p><nav>{sections.map((section, index) => <a href={`#${section.id}`} key={section.id}><span>{String(index + 1).padStart(2, "0")}</span>{section.title}</a>)}</nav></aside>

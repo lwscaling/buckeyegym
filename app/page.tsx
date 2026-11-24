@@ -9,8 +9,8 @@ const directions = "https://maps.google.com/?q=137+East+Ave+Suite+102+Tallmadge+
 const instagram = "https://www.instagram.com/buckeye_gym_/";
 
 const plans = [
-  { name: "Regular", price: "42.70", unit: "/ month", items: ["Full gym access", "Trainer support", "Locker room & showers", "Unlimited visits"] },
-  { name: "Discount", price: "37.36", unit: "/ month", note: "Students · Military · Seniors · First responders", items: ["Everything in Regular", "Valid ID required", "Same floor, same iron", "No contract"] },
+  { name: "Regular", price: "42.70", unit: "/ month", items: ["Full gym access", "Trainer support", "Locker room & showers", "Unlimited access"] },
+  { name: "Discount", price: "37.36", unit: "/ month", note: "Students · Military · Seniors · First responders", items: ["Everything in Regular", "Valid ID required", "No contract"] },
   { name: "Flex & Family", price: "10", unit: "from / visit", items: ["Day pass", "1-week visitor pass", "10-visit pack — never expires", "Family & couples plans"] },
 ];
 
@@ -57,7 +57,7 @@ const week = [
   { label: "Sunday", days: [0], text: "9am – 4pm" },
 ];
 
-const nav = [["The iron", "iron"], ["Rates", "rates"], ["Letters", "letters"], ["Coaches", "coaches"], ["Find us", "visit"]];
+const nav = [["Equipment", "iron"], ["Rates", "rates"], ["Reviews", "letters"], ["Coaches", "coaches"], ["Find us", "visit"]];
 
 function fmt(h: number) {
   const hh = Math.floor(h), mm = Math.round((h - hh) * 60);
@@ -128,7 +128,7 @@ export default function Home() {
       <a className="skip-link" href="#main-content">Skip to content</a>
 
       <header className={`bar${scrolled ? " is-shown" : ""}${menu ? " is-open" : ""}`}>
-        <a className="bar__mark" href="#top" aria-label="Buckeye Gym, back to top"><span className="mascot" aria-hidden="true"/>Buckeye</a>
+        <a className="bar__mark" href="#top" aria-label="Buckeye Gym, back to top"><span className="mascot" aria-hidden="true"/><span className="wordmark">Buckeye <span>Gym</span></span></a>
         <nav className="bar__nav" aria-label="Main">
           {nav.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>{label}</a>)}
         </nav>
@@ -156,8 +156,8 @@ export default function Home() {
           <h1 className="cover__mast" id="cover-title">Buckeye<sup>Gym</sup></h1>
           <div className="cover__body">
             <div className="cover__lines">
-              <p className="cl cl--lead"><b>Real iron<br/>since <span>1985.</span></b><small>Family owned. Old school. Still here.</small></p>
-              <p className="cl"><b>No contracts. <span>No hidden fees.</span></b><small>Monthly from $37.36</small></p>
+              <p className="cl cl--lead"><b>Real iron<br/>since <span>1985.</span></b><small>Family owned in Tallmadge, Ohio</small></p>
+              <p className="cl"><b>No contracts. <span>No hidden fees.</span></b><small>Memberships from $37.36 a month</small></p>
             </div>
             <Burst/>
           </div>
@@ -171,15 +171,15 @@ export default function Home() {
         {/* CONTENTS / MANIFESTO */}
         <section className="contents page" aria-labelledby="contents-title">
           <div className="contents__lede">
-            <h2 id="contents-title">Not a wellness club.<br/><span>A gym.</span></h2>
-            <p>Buckeye has been a family-owned iron gym in Tallmadge since 1985. Beginners and pro bodybuilders train side by side on the same floor, under the same mural, with the same respect. You&apos;re not a number here. You&apos;re part of the crew.</p>
+            <h2 id="contents-title">Everybody starts <span>somewhere.</span></h2>
+            <p>We&apos;ve been running this gym in Tallmadge since 1985, and it&apos;s still family owned. Some of our members compete. Some are picking up a dumbbell for the first time. Everyone trains on the same floor and gets treated the same way. If you&apos;re new and not sure where to start, ask. Somebody will help you out.</p>
           </div>
           <ol className="contents__list" aria-label="In this issue">
-            <li><a href="#iron"><b>The iron</b><span>Racks, plate-loaded machines, a deep dumbbell rack</span><ArrowDown aria-hidden="true"/></a></li>
-            <li><a href="#rates"><b>Rates</b><span>No contracts. First visit free.</span><ArrowDown aria-hidden="true"/></a></li>
-            <li><a href="#letters"><b>Letters</b><span>What the regulars say</span><ArrowDown aria-hidden="true"/></a></li>
-            <li><a href="#coaches"><b>Coaches</b><span>Three trainers, real credentials</span><ArrowDown aria-hidden="true"/></a></li>
-            <li><a href="#visit"><b>Find us</b><span>137 East Ave, Suite 102</span><ArrowDown aria-hidden="true"/></a></li>
+            <li><a href="#iron"><b>Equipment</b><span>Free weights, racks and plate-loaded machines</span><ArrowDown aria-hidden="true"/></a></li>
+            <li><a href="#rates"><b>Rates</b><span>Month to month, day passes and family plans</span><ArrowDown aria-hidden="true"/></a></li>
+            <li><a href="#letters"><b>Reviews</b><span>In our members&apos; own words</span><ArrowDown aria-hidden="true"/></a></li>
+            <li><a href="#coaches"><b>Coaches</b><span>Personal training and nutrition</span><ArrowDown aria-hidden="true"/></a></li>
+            <li><a href="#visit"><b>Find us</b><span>137 East Ave, Suite 102, Tallmadge</span><ArrowDown aria-hidden="true"/></a></li>
           </ol>
         </section>
 
@@ -187,34 +187,34 @@ export default function Home() {
         <section className="iron" id="iron" aria-labelledby="iron-title">
           <figure className="iron__photo">
             <img src="/gym/8147990525c8681d.webp" alt="A 190 lb dumbbell with its weight painted in yellow marker" loading="lazy" decoding="async"/>
-            <figcaption>Yes, it says 190. It gets used.</figcaption>
+            <figcaption>From the dumbbell rack</figcaption>
           </figure>
           <div className="iron__copy">
-            <h2 id="iron-title">Built around <span>iron.</span></h2>
-            <p className="iron__deck">Everything you need, nothing you don&apos;t. No juice bar, no tanning beds — just a deep floor of free weights and serious machines.</p>
+            <h2 id="iron-title">What&apos;s on <span>the floor.</span></h2>
+            <p className="iron__deck">Dumbbells, barbells, racks, benches and a long row of plate-loaded machines. Bring your program and get to work.</p>
             <ul className="iron__list">
-              <li><b>Free weights</b><span>A deep dumbbell rack, benches, racks and platforms.</span></li>
-              <li><b>Plate-loaded machines</b><span>Hack squat, leg press, levers and presses for every split.</span></li>
-              <li><b>Coaching</b><span>Personal training and nutrition from three certified coaches.</span></li>
-              <li><b>Room to work</b><span>Clean floors, open space, locker rooms and showers.</span></li>
+              <li><b>Free weights</b><span>Dumbbells, barbells, benches, racks and platforms.</span></li>
+              <li><b>Machines</b><span>Hack squat, leg press, presses, rows and more, plate-loaded and selectorized.</span></li>
+              <li><b>Coaching</b><span>Personal training and nutrition coaching with our trainers.</span></li>
+              <li><b>Locker rooms</b><span>Lockers and showers, so you can train before work.</span></li>
             </ul>
-            <a className="btn btn--yellow" href="#spread">See the floor <ArrowDown aria-hidden="true"/></a>
+            <a className="btn btn--yellow" href="#spread">See the gym <ArrowDown aria-hidden="true"/></a>
           </div>
         </section>
 
         {/* RATES */}
         <section className="rates" id="rates" aria-labelledby="rates-title">
           <div className="rates__head">
-            <div className="rates__title"><span className="mascot mascot--ink" aria-hidden="true"/><h2 id="rates-title">The price list.</h2></div>
-            <p>No contracts. No sign-up fees hiding in the fine print. Pick a plan or just walk in.</p>
+            <h2 id="rates-title">The price list.</h2>
+            <p>No contracts. Pay month to month, or just come in when you can.</p>
           </div>
           <div className="rates__grid">
             <article className="coupon coupon--free">
               <Scissors className="coupon__cut" aria-hidden="true"/>
               <h3>First visit</h3>
               <p className="coupon__price"><b>Free</b></p>
-              <p className="coupon__note">Walk in during open hours, tell the desk it&apos;s your first time, and train on us. No clipping required.</p>
-              <a className="btn btn--black" href="#visit">Plan your visit <ArrowRight aria-hidden="true"/></a>
+              <p className="coupon__note">Never been in? Your first workout is on us. Come in during open hours and tell the front desk it&apos;s your first visit.</p>
+              <a className="btn btn--black" href="#visit">Hours and directions <ArrowRight aria-hidden="true"/></a>
             </article>
             {plans.map((plan) => <article className="coupon" key={plan.name}>
               <Scissors className="coupon__cut" aria-hidden="true"/>
@@ -225,13 +225,13 @@ export default function Home() {
               <a className="btn btn--outline" href={signup} target="_blank" rel="noreferrer">Join online <ArrowUpRight aria-hidden="true"/></a>
             </article>)}
           </div>
-          <p className="rates__foot">Discounts require a valid ID. Questions? <a href="tel:+13306333084">Call (330) 633-3084</a></p>
+          <p className="rates__foot">Discount rates need a valid student, military, senior or first responder ID. Questions? <a href="tel:+13306333084">Call (330) 633-3084</a></p>
         </section>
 
         {/* LETTERS */}
         <section className="letters page" id="letters" aria-labelledby="letters-title">
           <div className="letters__head">
-            <h2 id="letters-title">Letters.</h2>
+            <h2 id="letters-title">Reviews.</h2>
             <a className="letters__google" href={googleReviews} target="_blank" rel="noreferrer"><span aria-hidden="true">★★★★★</span> 90+ five-star reviews on Google <ArrowUpRight aria-hidden="true"/></a>
           </div>
           <div className="letters__cols">
@@ -245,8 +245,8 @@ export default function Home() {
         {/* SPREAD */}
         <section className="spread" id="spread" aria-labelledby="spread-title">
           <div className="spread__head">
-            <h2 id="spread-title">No staged shots. <span>This is the place.</span></h2>
-            <a className="btn btn--outline-light" href={instagram} target="_blank" rel="noreferrer">@buckeye_gym_ <ArrowUpRight aria-hidden="true"/></a>
+            <h2 id="spread-title">Inside <span>Buckeye.</span></h2>
+            <a className="btn btn--outline-light" href={instagram} target="_blank" rel="noreferrer">Follow @buckeye_gym_ <ArrowUpRight aria-hidden="true"/></a>
           </div>
           <div className={`spread__grid${allPhotos ? " is-all" : ""}`}>
             {gallery.map((img, i) => <button type="button" className="spread__item" key={img.src} onClick={() => setLightbox(i)} aria-label={`Open photo: ${img.alt}`}>
@@ -274,14 +274,14 @@ export default function Home() {
               <ul>{c.details.map((d) => <li key={d}>{d}</li>)}</ul>
             </article>)}
           </div>
-          <p className="coaches__foot">Ask at the front desk or <a href="tel:+13306333084">call (330) 633-3084</a> to book a session.</p>
+          <p className="coaches__foot">Want help getting started? Ask at the front desk or <a href="tel:+13306333084">call (330) 633-3084</a> to set up a session.</p>
         </section>
 
         {/* TOUR */}
         <section className="tour" aria-labelledby="tour-title">
           <div className="tour__copy">
-            <h2 id="tour-title">Walk the floor <span>before you walk in.</span></h2>
-            <p>Drag around the gym in 360°. Then come see it in person — your first visit is free.</p>
+            <h2 id="tour-title">Have a look <span>around.</span></h2>
+            <p>Take the 360° tour and see the gym for yourself. When you&apos;re ready, your first visit is free.</p>
           </div>
           <div className="tour__frame">
             <iframe src="https://www.google.com/maps/embed?pb=!4v1756912731193!6m8!1m7!1sCAoSHENJQUJJaERLVlJtOThqWktwMFozQ3NoRURQY3Y.!2m2!1d41.10235743997894!2d-81.43503416500457!3f101.68!4f-2.680000000000007!5f0.4000000000000002" title="360° virtual tour of Buckeye Gym" loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade"/>
@@ -291,8 +291,8 @@ export default function Home() {
         {/* VISIT */}
         <section className="visit" id="visit" aria-labelledby="visit-title">
           <div className="visit__head">
-            <h2 id="visit-title">Come lift.<span className="mascot" aria-hidden="true"/></h2>
-            <p>Your first visit is free. Just walk in during open hours and tell the desk it&apos;s your first time.</p>
+            <h2 id="visit-title">Come lift.</h2>
+            <p>Your first visit is free. Come in any time we&apos;re open and tell the front desk it&apos;s your first time.</p>
             {statusPill}
           </div>
           <div className="visit__grid">

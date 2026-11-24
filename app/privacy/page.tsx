@@ -14,4 +14,4 @@ const sections = [
   { id: "contact", title: "Contact", content: <><address><strong>Buckeye Gym</strong><br/>137 East Ave, Suite 102<br/>Tallmadge, OH 44278<br/><a href="tel:+13306333084">(330) 633-3084</a><br/><a href="mailto:rkpropst11@yahoo.com">rkpropst11@yahoo.com</a></address></> },
 ];
 
-export default function PrivacyPage() { return <LegalPage eyebrow="Your information. No games." title="Privacy policy" intro="This policy explains what information Buckeye Gym receives through this website, why we use it, and the choices available to you." sections={sections}/>; }
+export default function PrivacyPage() { return <LegalPage eyebrow="Buckeye Gym · Tallmadge, Ohio" title="Privacy policy" intro="This policy explains what information Buckeye Gym receives through this website, why we use it, and the choices available to you." sections={sections}/>; }
