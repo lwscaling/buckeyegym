@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   other: { "geo.region": "US-OH", "geo.placename": "Tallmadge", "geo.position": "41.102357;-81.435034", ICBM: "41.102357, -81.435034" },
 };
 
-export const viewport: Viewport = { themeColor: "#11100e", colorScheme: "dark light", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#0b0b0b", colorScheme: "dark", width: "device-width", initialScale: 1 };
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -53,5 +53,5 @@ const structuredData = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><head><link rel="preload" as="image" href="/gym/35909c57bf2c49d1.jpeg" fetchPriority="high"/></head><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}/></body></html>;
+  return <html lang="en"><head><link rel="preload" as="font" type="font/woff2" href="/fonts/shrikhand-400-latin.woff2" crossOrigin=""/><link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-700-latin.woff2" crossOrigin=""/></head><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}/></body></html>;
 }
