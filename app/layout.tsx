@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   publisher: "Buckeye Gym",
   formatDetection: { address: false, email: false, telephone: false },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
-    shortcut: "/icon.png",
+    icon: [{ url: "/favicon.ico", sizes: "32x32" }, { url: "/icon-192.png", type: "image/png", sizes: "192x192" }, { url: "/icon.png", type: "image/png", sizes: "512x512" }],
+    shortcut: "/favicon.ico",
     apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
   },
   manifest: "/manifest.webmanifest",
