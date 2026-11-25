@@ -149,8 +149,8 @@ export default function Home() {
         {/* COVER */}
         <section className="cover" id="top" aria-labelledby="cover-title">
           <picture className="cover__photo">
-            <source media="(max-width: 900px)" srcSet="/gym/cover-mural-960.webp"/>
-            <img src="/gym/cover-mural-1920.webp" width={1920} height={1312} alt="The hand-drawn Mr. Olympia mural above the Buckeye Gym weight floor" fetchPriority="high"/>
+            <source media="(max-width: 860px)" srcSet="/gym/cover-dumbbell-960.webp" width={960} height={1280}/>
+            <img src="/gym/cover-rack-1320.webp" width={1320} height={875} alt="Dumbbells lined up on the rack at Buckeye Gym" fetchPriority="high"/>
           </picture>
           <div className="cover__top">
             <span>Est. 1985 · Tallmadge, OH</span>
