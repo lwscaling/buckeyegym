@@ -29,6 +29,9 @@ const gallery: { src: string; alt: string; w?: number; h?: number }[] = [
   { src: "4c14091987713d60.webp", alt: "Black machine frame by the mirrors" },
   { src: "35909c57bf2c49d1.jpeg", w: 750, h: 494, alt: "The weight floor with physique posters on the wall" },
   { src: "c855c425fc1e0d1f.jpeg", w: 750, h: 496, alt: "Red-walled training area with racks and platforms" },
+  { src: "b9a67ea05ad3adba.jpeg", w: 1320, h: 875, alt: "Rows of dumbbells on the rack" },
+  { src: "8147990525c8681d.webp", alt: "A 190 lb dumbbell on the diamond-plate floor" },
+  { src: "5ea8f1fda7527042.webp", w: 2560, h: 1749, alt: "The hand-drawn Mr. Olympia mural above the weight floor" },
 ];
 
 const letters = [
