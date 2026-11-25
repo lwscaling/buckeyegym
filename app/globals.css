@@ -39,7 +39,7 @@ h2{font-family:var(--display);font-weight:400;line-height:.9;letter-spacing:-.02
 /* sticky bar */
 .bar{position:fixed;z-index:50;top:0;left:0;right:0;height:64px;display:flex;align-items:center;gap:28px;padding:0 var(--pad);background:var(--black);border-bottom:3px solid var(--yellow);transform:translateY(-110%);transition:transform .35s var(--ease)}
 .bar.is-shown,.bar.is-open{transform:none}
-.bar__mark{font-family:var(--display);font-size:32px;line-height:1;color:var(--yellow);text-decoration:none;text-shadow:2px 2px 0 var(--red);transform:skew(-4deg)}
+.bar__mark{font-family:var(--display);font-size:32px;line-height:1;color:var(--red);text-decoration:none;text-shadow:.04em .045em 0 var(--black),.075em .085em 0 var(--yellow);transform:skew(-4deg)}
 .bar__nav{display:flex;gap:26px;margin-left:auto;font-weight:700;font-size:17px;letter-spacing:.12em;text-transform:uppercase}
 .bar__nav a,.cover__nav a,.foot nav a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;padding-bottom:2px;transition:background-size .25s var(--ease)}
 .bar__nav a:hover,.cover__nav a:hover,.foot nav a:hover{background-size:100% 2px}
@@ -234,7 +234,7 @@ h2{font-family:var(--display);font-weight:400;line-height:.9;letter-spacing:-.02
 /* FOOTER */
 .foot{padding:clamp(60px,8vw,110px) var(--pad) 28px;background:var(--black)}
 .foot__rules{display:flex;align-items:center;gap:clamp(20px,4vw,60px);padding-bottom:clamp(40px,5vw,70px)}
-.mascot{display:block;flex:none;aspect-ratio:322/425;background:var(--yellow);-webkit-mask:url(/gym/buckeye-header-white.png) center/contain no-repeat;mask:url(/gym/buckeye-header-white.png) center/contain no-repeat}
+.mascot{display:block;flex:none;aspect-ratio:322/425;background:var(--white);-webkit-mask:url(/gym/buckeye-header-white.png) center/contain no-repeat;mask:url(/gym/buckeye-header-white.png) center/contain no-repeat}
 .foot__rules .mascot{width:clamp(100px,11vw,160px)}
 .foot__rules p{font-family:var(--display);font-size:clamp(36px,4.6vw,76px);line-height:1;letter-spacing:-.02em}
 .foot__rules span{color:var(--yellow);text-shadow:.035em .04em 0 var(--red)}
@@ -247,7 +247,7 @@ h2{font-family:var(--display);font-weight:400;line-height:.9;letter-spacing:-.02
 .wordmark{white-space:nowrap}
 .wordmark span{color:var(--gym-color,var(--white))}
 .bar__mark,.legal-nav .brand{display:inline-flex;align-items:center;gap:10px}
-.bar__mark .mascot,.legal-nav .brand .mascot{width:34px;transform:skew(4deg);filter:drop-shadow(2px 2px 0 var(--red))}
+.bar__mark .mascot,.legal-nav .brand .mascot{width:34px;transform:skew(4deg)}
 .not-found{position:relative;overflow:hidden}
 .not-found__mascot{position:absolute;right:var(--pad);bottom:-4vh;width:clamp(160px,24vw,380px);opacity:.95}
 @media (max-width:860px){.not-found__mascot{opacity:.25}}
@@ -318,7 +318,7 @@ h2{font-family:var(--display);font-weight:400;line-height:.9;letter-spacing:-.02
 /* LEGAL + 404 */
 .legal-page{min-height:100svh;background:var(--paper);color:var(--ink)}
 .legal-nav{position:sticky;top:0;z-index:10;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:var(--black);border-bottom:3px solid var(--yellow);color:var(--white)}
-.legal-nav .brand{font-family:var(--display);font-size:32px;line-height:1;color:var(--yellow);text-decoration:none;text-shadow:2px 2px 0 var(--red);transform:skew(-4deg)}
+.legal-nav .brand{font-family:var(--display);font-size:32px;line-height:1;color:var(--red);text-decoration:none;text-shadow:.04em .045em 0 var(--black),.075em .085em 0 var(--yellow);transform:skew(-4deg)}
 .legal-back{font-weight:700;font-size:17px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--yellow);padding-bottom:2px}
 .legal-back:hover{color:var(--yellow)}
 .legal-hero{padding:clamp(60px,9vw,130px) var(--pad) clamp(50px,6vw,80px);background:var(--black);color:var(--white)}
