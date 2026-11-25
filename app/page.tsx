@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight, MapPin, Phone, Scissors, Star, X } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight, MapPin, Phone, Play, Scissors, Star, X } from "lucide-react";
 
 const signup = "https://buckeyegym.gymmasteronline.com/portal/signup";
 const googleReviews = "https://www.google.com/maps/search/?api=1&query=Buckeye+Gym%2C+137+East+Ave+Suite+102%2C+Tallmadge%2C+OH+44278";
@@ -14,7 +14,7 @@ const plans = [
   { name: "Flex & Family", price: "10", unit: "from / visit", items: ["Day pass", "1-week visitor pass", "10-visit pack — never expires", "Family & couples plans"] },
 ];
 
-const gallery = [
+const gallery: { src: string; alt: string; w?: number; h?: number }[] = [
   { src: "e7d80179147f271f.webp", alt: "Plate-loaded hack squat on the Buckeye Gym floor" },
   { src: "5dd202989792a5e5.webp", alt: "Red plate-loaded lever machine" },
   { src: "4e7450bf25309c95.webp", alt: "Black and red plate-loaded press" },
@@ -27,8 +27,8 @@ const gallery = [
   { src: "cf7348ead5871a6c.webp", alt: "Machine in front of framed physique posters" },
   { src: "4d201604b9ea814a.webp", alt: "Cable station with the dumbbell rack behind" },
   { src: "4c14091987713d60.webp", alt: "Black machine frame by the mirrors" },
-  { src: "35909c57bf2c49d1.jpeg", alt: "The weight floor with physique posters on the wall" },
-  { src: "c855c425fc1e0d1f.jpeg", alt: "Red-walled training area with racks and platforms" },
+  { src: "35909c57bf2c49d1.jpeg", w: 750, h: 494, alt: "The weight floor with physique posters on the wall" },
+  { src: "c855c425fc1e0d1f.jpeg", w: 750, h: 496, alt: "Red-walled training area with racks and platforms" },
 ];
 
 const letters = [
@@ -97,6 +97,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [allPhotos, setAllPhotos] = useState(false);
+  const [tourOn, setTourOn] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.75);
@@ -146,7 +147,7 @@ export default function Home() {
         <section className="cover" id="top" aria-labelledby="cover-title">
           <picture className="cover__photo">
             <source media="(max-width: 900px)" srcSet="/gym/cover-mural-960.webp"/>
-            <img src="/gym/cover-mural-1920.webp" alt="The hand-drawn Mr. Olympia mural above the Buckeye Gym weight floor" fetchPriority="high"/>
+            <img src="/gym/cover-mural-1920.webp" width={1920} height={1312} alt="The hand-drawn Mr. Olympia mural above the Buckeye Gym weight floor" fetchPriority="high"/>
           </picture>
           <div className="cover__top">
             <span>Est. 1985 · Tallmadge, OH</span>
@@ -156,7 +157,7 @@ export default function Home() {
           <h1 className="cover__mast" id="cover-title">Buckeye<sup>Gym</sup></h1>
           <div className="cover__body">
             <div className="cover__lines">
-              <p className="cl cl--lead"><b>Real iron<br/>since <span>1985.</span></b><small>Family owned in Tallmadge, Ohio</small></p>
+              <p className="cl cl--lead"><b>Since <span>1985.</span></b><small>Family owned in Tallmadge, Ohio</small></p>
               <p className="cl"><b>No contracts. <span>No hidden fees.</span></b><small>Memberships from $37.36 a month</small></p>
             </div>
             <Burst/>
@@ -186,7 +187,7 @@ export default function Home() {
         {/* FEATURE: THE IRON */}
         <section className="iron" id="iron" aria-labelledby="iron-title">
           <figure className="iron__photo">
-            <img src="/gym/8147990525c8681d.webp" alt="A 190 lb dumbbell with its weight painted in yellow marker" loading="lazy" decoding="async"/>
+            <img src="/gym/8147990525c8681d.webp" width={1500} height={2000} alt="A 190 lb dumbbell with its weight painted in yellow marker" loading="lazy" decoding="async"/>
             <figcaption>From the dumbbell rack</figcaption>
           </figure>
           <div className="iron__copy">
@@ -250,7 +251,7 @@ export default function Home() {
           </div>
           <div className={`spread__grid${allPhotos ? " is-all" : ""}`}>
             {gallery.map((img, i) => <button type="button" className="spread__item" key={img.src} onClick={() => setLightbox(i)} aria-label={`Open photo: ${img.alt}`}>
-              <img src={`/gym/${img.src}`} alt={img.alt} loading="lazy" decoding="async"/>
+              <img src={`/gym/${img.src}`} width={img.w ?? 1500} height={img.h ?? 2000} alt={img.alt} loading="lazy" decoding="async"/>
             </button>)}
           </div>
           {!allPhotos && <button type="button" className="btn btn--yellow spread__more" onClick={() => setAllPhotos(true)}>Show all {gallery.length} photos <ArrowDown aria-hidden="true"/></button>}
@@ -268,7 +269,7 @@ export default function Home() {
           <h2 id="coaches-title">Meet the <span>coaches.</span></h2>
           <div className="coaches__grid">
             {coaches.map((c) => <article className="coach" key={c.name}>
-              <figure><img src={`/gym/${c.image}`} alt={`${c.name}, Buckeye Gym trainer`} loading="lazy" decoding="async"/></figure>
+              <figure><img src={`/gym/${c.image}`} width={500} height={500} alt={`${c.name}, Buckeye Gym trainer`} loading="lazy" decoding="async"/></figure>
               <h3>{c.name}</h3>
               <p className="coach__focus">{c.focus}</p>
               <ul>{c.details.map((d) => <li key={d}>{d}</li>)}</ul>
@@ -284,7 +285,12 @@ export default function Home() {
             <p>Take the 360° tour and see the gym for yourself. When you&apos;re ready, your first visit is free.</p>
           </div>
           <div className="tour__frame">
-            <iframe src="https://www.google.com/maps/embed?pb=!4v1756912731193!6m8!1m7!1sCAoSHENJQUJJaERLVlJtOThqWktwMFozQ3NoRURQY3Y.!2m2!1d41.10235743997894!2d-81.43503416500457!3f101.68!4f-2.680000000000007!5f0.4000000000000002" title="360° virtual tour of Buckeye Gym" loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade"/>
+            {tourOn
+              ? <iframe src="https://www.google.com/maps/embed?pb=!4v1756912731193!6m8!1m7!1sCAoSHENJQUJJaERLVlJtOThqWktwMFozQ3NoRURQY3Y.!2m2!1d41.10235743997894!2d-81.43503416500457!3f101.68!4f-2.680000000000007!5f0.4000000000000002" title="360° virtual tour of Buckeye Gym" allowFullScreen referrerPolicy="no-referrer-when-downgrade"/>
+              : <button type="button" className="tour__poster" onClick={() => setTourOn(true)}>
+                  <img src="/gym/hero-gym-mural.webp" width={1536} height={1024} alt="" loading="lazy" decoding="async"/>
+                  <span className="btn btn--yellow"><Play aria-hidden="true"/> Start the 360° tour</span>
+                </button>}
           </div>
         </section>
 
