@@ -154,7 +154,7 @@ export default function Home() {
             <nav className="cover__nav" aria-label="Sections">{nav.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav>
             {statusPill}
           </div>
-          <h1 className="cover__mast" id="cover-title">Buckeye<sup>Gym</sup></h1>
+          <h1 className="cover__mast" id="cover-title">Buckeye <span>Gym</span></h1>
           <div className="cover__body">
             <div className="cover__lines">
               <p className="cl cl--lead"><b>Since <span>1985.</span></b><small>Family owned in Tallmadge, Ohio</small></p>
